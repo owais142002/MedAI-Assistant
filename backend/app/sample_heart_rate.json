@@ -1,0 +1,227 @@
+{
+    "activities-heart": [
+      {
+        "dateTime": "2023-03-01",
+        "value": {
+          "customHeartRateZones": [],
+          "heartRateZones": [
+            {
+              "caloriesOut": 230.4,
+              "max": 93,
+              "min": 30,
+              "minutes": 1440,
+              "name": "Out of Range"
+            },
+            {
+              "caloriesOut": 0,
+              "max": 132,
+              "min": 93,
+              "minutes": 0,
+              "name": "Fat Burn"
+            },
+            {
+              "caloriesOut": 0,
+              "max": 160,
+              "min": 132,
+              "minutes": 0,
+              "name": "Cardio"
+            },
+            {
+              "caloriesOut": 0,
+              "max": 220,
+              "min": 160,
+              "minutes": 0,
+              "name": "Peak"
+            }
+          ],
+          "restingHeartRate": 68
+        }
+      },
+      {
+        "dateTime": "2023-03-02",
+        "value": {
+          "customHeartRateZones": [],
+          "heartRateZones": [
+            {
+              "caloriesOut": 210.2,
+              "max": 95,
+              "min": 30,
+              "minutes": 1380,
+              "name": "Out of Range"
+            },
+            {
+              "caloriesOut": 15.5,
+              "max": 135,
+              "min": 95,
+              "minutes": 15,
+              "name": "Fat Burn"
+            },
+            {
+              "caloriesOut": 30.3,
+              "max": 160,
+              "min": 135,
+              "minutes": 10,
+              "name": "Cardio"
+            },
+            {
+              "caloriesOut": 0,
+              "max": 220,
+              "min": 160,
+              "minutes": 0,
+              "name": "Peak"
+            }
+          ],
+          "restingHeartRate": 70
+        }
+      },
+      {
+        "dateTime": "2023-03-03",
+        "value": {
+          "customHeartRateZones": [],
+          "heartRateZones": [
+            {
+              "caloriesOut": 195.1,
+              "max": 92,
+              "min": 30,
+              "minutes": 1320,
+              "name": "Out of Range"
+            },
+            {
+              "caloriesOut": 40.0,
+              "max": 135,
+              "min": 92,
+              "minutes": 30,
+              "name": "Fat Burn"
+            },
+            {
+              "caloriesOut": 0,
+              "max": 160,
+              "min": 135,
+              "minutes": 0,
+              "name": "Cardio"
+            },
+            {
+              "caloriesOut": 0,
+              "max": 220,
+              "min": 160,
+              "minutes": 0,
+              "name": "Peak"
+            }
+          ],
+          "restingHeartRate": 67
+        }
+      },
+      {
+        "dateTime": "2023-03-04",
+        "value": {
+          "customHeartRateZones": [],
+          "heartRateZones": [
+            {
+              "caloriesOut": 240.0,
+              "max": 95,
+              "min": 30,
+              "minutes": 1440,
+              "name": "Out of Range"
+            },
+            {
+              "caloriesOut": 0,
+              "max": 135,
+              "min": 95,
+              "minutes": 0,
+              "name": "Fat Burn"
+            },
+            {
+              "caloriesOut": 0,
+              "max": 160,
+              "min": 135,
+              "minutes": 0,
+              "name": "Cardio"
+            },
+            {
+              "caloriesOut": 0,
+              "max": 220,
+              "min": 160,
+              "minutes": 0,
+              "name": "Peak"
+            }
+          ],
+          "restingHeartRate": 66
+        }
+      },
+      {
+        "dateTime": "2023-03-05",
+        "value": {
+          "customHeartRateZones": [],
+          "heartRateZones": [
+            {
+              "caloriesOut": 225.0,
+              "max": 94,
+              "min": 30,
+              "minutes": 1410,
+              "name": "Out of Range"
+            },
+            {
+              "caloriesOut": 10.0,
+              "max": 135,
+              "min": 94,
+              "minutes": 10,
+              "name": "Fat Burn"
+            },
+            {
+              "caloriesOut": 25.0,
+              "max": 160,
+              "min": 135,
+              "minutes": 8,
+              "name": "Cardio"
+            },
+            {
+              "caloriesOut": 0,
+              "max": 220,
+              "min": 160,
+              "minutes": 0,
+              "name": "Peak"
+            }
+          ],
+          "restingHeartRate": 69
+        }
+      },
+      {
+        "dateTime": "2023-03-06",
+        "value": {
+          "customHeartRateZones": [],
+          "heartRateZones": [
+            {
+              "caloriesOut": 235.5,
+              "max": 96,
+              "min": 30,
+              "minutes": 1420,
+              "name": "Out of Range"
+            },
+            {
+              "caloriesOut": 15.0,
+              "max": 138,
+              "min": 96,
+              "minutes": 12,
+              "name": "Fat Burn"
+            },
+            {
+              "caloriesOut": 20.0,
+              "max": 160,
+              "min": 138,
+              "minutes": 6,
+              "name": "Cardio"
+            },
+            {
+              "caloriesOut": 0,
+              "max": 220,
+              "min": 160,
+              "minutes": 0,
+              "name": "Peak"
+            }
+          ],
+          "restingHeartRate": 68
+        }
+      }
+    ]
+  }
+  
