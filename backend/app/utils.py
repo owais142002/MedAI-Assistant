@@ -5,6 +5,9 @@ from tenacity import RetryError
 from tenacity import stop_after_attempt
 from tenacity import wait_exponential
 from datetime import datetime, timedelta
+from langchain_core.messages.human import HumanMessage
+from langchain_core.messages.ai import AIMessage
+from langchain_core.messages.system import SystemMessage
 import tiktoken
 import GlobalConstants
 import requests
@@ -167,3 +170,25 @@ def limit_tokens_from_string(string):
     while len(encoding.encode(string)) >= 3000:
         string = string[:len(string) - 5]
     return string
+
+
+
+def to_serializable_format(messages):
+    serializable_list = []
+    for message in messages:
+        if isinstance(message, HumanMessage):
+            serializable_list.append({
+                "type": "human",
+                "content": message.content
+            })
+        elif isinstance(message, AIMessage):
+            serializable_list.append({
+                "type": "ai",
+                "content": message.content
+            })
+        elif isinstance(message, SystemMessage):
+            serializable_list.append({
+                "type": "system",
+                "content": message.content
+            })
+    return serializable_list

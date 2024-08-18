@@ -45,6 +45,7 @@ def getLLM():
             model=GlobalConstants.LLM_MODEL,
             openai_api_key=GlobalConstants.LLM_API_KEY,
             streaming=True,
+            top_p= 0.01
         )    
 
     return llm
