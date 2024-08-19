@@ -1,6 +1,22 @@
-LLM_API_KEY = ""
-LLM_MODEL = "gpt-4-turbo"
-LLM_TIMEOUT = 40
-MAIN_AGENT_SYSTEM_MESSAGE = "You are a medical chatbot who helps the user analyze medical conditions. You are provided with following sub agents:\n1-HeartRateAnalyzerAgent: Invoke this agent to get the heart rate data of the user. Analyze the data fetched and let the user know about any symptom or disturbing things if found.\n2-PrescriptionAnalyzerAgent: Invoke this agent with input of image url. This agent extracts the information from prescription image which will be used by you to analyze the prescription. Analyze the data fetched and let user know about every side effect and important info that may occur due to the extracted medicine.\n3- Medicine Search Agent: Use this agent search about any medicine by invoking with correct spelling of the medicine.\n**Important Guidelines**\n-Never mention any agent or subagent to the user.\n-Never mention heart rate data in the response.\n-Try to act like user's healthcare provider and suggest things.\n-Process the output intelligently into markdown formatting for structure, without altering the contents. "
-IS_DEBUG_MODE = True
-MAX_AGENT_ITERATIONS = 5
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from the .env file
+load_dotenv()
+
+# Define constants from environment variables
+LLM_API_KEY = os.getenv('LLM_API_KEY')
+LLM_MODEL = os.getenv('LLM_MODEL')
+LLM_TIMEOUT = int(os.getenv('LLM_TIMEOUT', 40))  # Default to 40 if not set
+MAIN_AGENT_SYSTEM_MESSAGE = os.getenv('MAIN_AGENT_SYSTEM_MESSAGE')
+IS_DEBUG_MODE = os.getenv('IS_DEBUG_MODE', 'False').lower() in ['true', '1', 't']  # Converts to boolean
+MAX_AGENT_ITERATIONS = int(os.getenv('MAX_AGENT_ITERATIONS', 5))  # Default to 5 if not set
+
+# Database connection details
+TIDB_CONNECTION_STRING = os.getenv('TIDB_CONNECTION_STRING')
+DB_USER = os.getenv('DB_USER')
+DB_PASSWORD = os.getenv('DB_PASSWORD')
+DB_NAME = os.getenv('DB_NAME')
+DB_SSL_PATH = os.getenv('DB_SSL_PATH')
+DB_HOST = os.getenv('DB_HOST')
+DB_PORT = int(os.getenv('DB_PORT', 4000))  # Default to 4000 if not set

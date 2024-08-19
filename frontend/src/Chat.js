@@ -8,6 +8,7 @@ const Chat = () => {
   const [query, setQuery] = useState('');
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [chatHistoryLoading, setChatHistoryLoading] = useState(true);
   const access_token = localStorage.getItem('access_token');
   const navigate = useNavigate();
   const chatContainerRef = useRef(null);
@@ -18,12 +19,15 @@ const Chat = () => {
 
   const fetchChatHistory = async () => {
     try {
+      setChatHistoryLoading(true);
       const response = await api.get('/medbot/chat-history/', {
         headers: { Authorization: `Bearer ${access_token}` }
       });
       setMessages(response.data.data);
     } catch (error) {
       console.error(error);
+    } finally {
+      setChatHistoryLoading(false);
     }
   };
 
@@ -114,17 +118,23 @@ const Chat = () => {
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <h2 className="text-2xl mb-4">Chat</h2>
       <div className="w-full max-w-2xl bg-white p-4 rounded-lg shadow-md overflow-y-auto" ref={chatContainerRef} style={{ maxHeight: '60vh' }}>
-        {messages.map((message, index) => (
-          <div key={index} className={`mb-2 ${message.type === 'human' ? 'text-right' : 'text-left'}`}>
-            <div className={`inline-block px-4 py-2 rounded-lg ${message.type === 'human' ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-800'}`}>
-              {message.type === 'ai' ? (
-                <ReactMarkdown>{message.content}</ReactMarkdown>
-              ) : (
-                message.content
-              )}
-            </div>
+        {chatHistoryLoading ? (
+          <div className="flex justify-center items-center h-full">
+            <Loader />
           </div>
-        ))}
+        ) : (
+          messages.map((message, index) => (
+            <div key={index} className={`mb-2 ${message.type === 'human' ? 'text-right' : 'text-left'}`}>
+              <div className={`inline-block px-4 py-2 rounded-lg ${message.type === 'human' ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-800'}`}>
+                {message.type === 'ai' ? (
+                  <ReactMarkdown>{message.content}</ReactMarkdown>
+                ) : (
+                  message.content
+                )}
+              </div>
+            </div>
+          ))
+        )}
       </div>
       <div className="w-full max-w-2xl flex mt-4">
         <input

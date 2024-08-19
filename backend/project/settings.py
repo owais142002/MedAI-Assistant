@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import GlobalConstants
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-hxltm#&5&d9lk%t-lwvqdcc!mi+j=1@a*iw79lo4+4agbvvc05
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -42,9 +43,6 @@ INSTALLED_APPS = [
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000/"
-]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -76,6 +74,8 @@ TEMPLATES = [
     },
 ]
 
+ASGI_APPLICATION = 'project.asgi.application'
+
 WSGI_APPLICATION = 'project.wsgi.application'
 
 AUTH_USER_MODEL = 'app.User'
@@ -84,15 +84,19 @@ AUTH_USER_MODEL = 'app.User'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'medbot_db',
-        'USER': 'root',
-        'PASSWORD': 'owaisahmed123',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'ENGINE': 'django_tidb',
+        'NAME': GlobalConstants.DB_NAME,
+        'USER': GlobalConstants.DB_USER,
+        'PASSWORD': GlobalConstants.DB_PASSWORD,
+        'HOST':GlobalConstants.DB_HOST,
+        'PORT': GlobalConstants.DB_PORT,
+        "OPTIONS": {
+            "charset": "utf8mb4",
+            'ssl_mode': 'VERIFY_IDENTITY',
+            'ssl': {'ca': GlobalConstants.DB_SSL_PATH}
+        },        
     }
 }
-
 
 from datetime import timedelta
 ...

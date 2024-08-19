@@ -91,7 +91,7 @@ Our application includes the following AI agents:
 
 6. **Start the Django Development Server**:
    ```bash
-   python manage.py runserver
+   uvicorn project.asgi:application --host 0.0.0.0 --port 8000
    ```
    The API will be accessible at `http://localhost:8000`.
 

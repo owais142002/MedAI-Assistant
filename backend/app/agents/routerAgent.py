@@ -2,7 +2,7 @@ from app.agents.heartrateAnalyzerAgent.agent import HeartRateAnalyzerAgent
 from app.agents.prescriptionAnalyzerAgent.agent import PrescriptionAnalyzerAgent
 from app.agents.medicineSearchAgent.agent import MedicineSearchAgent
 from langchain.agents import AgentExecutor, create_openai_tools_agent
-from langchain_community.chat_message_histories.sql import SQLChatMessageHistory
+from app.SQLChatMessageHistory import SQLChatMessageHistory
 from langchain.memory import ConversationBufferMemory
 from langchain_openai import ChatOpenAI
 import GlobalConstants
@@ -25,11 +25,11 @@ agents = {
 
 def getMemory(userId):
     message_history = SQLChatMessageHistory(
-        connection_string="mysql+pymysql://root:owaisahmed123@localhost:3306/medbot_db",
+        connection_string=GlobalConstants.TIDB_CONNECTION_STRING,
         session_id=userId,
         table_name="chat_history",
+        ssl_ca=GlobalConstants.DB_SSL_PATH  # Path to the CA certificate file
     )
-
     memory = ConversationBufferMemory(
         memory_key="chat_history",
         chat_memory=message_history,
