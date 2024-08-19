@@ -5,6 +5,7 @@ Welcome to the **MedAI Assistant** project! This repository is designed for the 
 ## Table of Contents
 
 - [Project Overview](#project-overview)
+- [Project Demo](#project-demo)
 - [Technologies Used](#technologies-used)
 - [Agents](#agents)
 - [Frontend Setup](#frontend-setup)
@@ -15,6 +16,13 @@ Welcome to the **MedAI Assistant** project! This repository is designed for the 
 ## Project Overview
 
 MedAI Assistant is designed to assist users with healthcare-related information through AI-powered analysis. It offers features like heart rate data analysis, prescription interpretation, and medicine information retrieval. This project combines the power of modern frontend technologies with robust backend services and intelligent agents.
+
+## Project Demo
+
+
+https://github.com/user-attachments/assets/f034c6fe-4393-4837-a15e-2d569bbd21d3
+
+
 
 ## Technologies Used
 
