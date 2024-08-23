@@ -1,6 +1,6 @@
-# MedAI Assistant for TiDB Hackathon
+# MedAI Assistant
 
-Welcome to the **MedAI Assistant** project! This repository is designed for the TiDB Hackathon hosted by Devpost and leverages state-of-the-art technology to provide advanced healthcare insights using AI. Our application integrates a React frontend with a Django backend, incorporating Langchain AI agents and OpenAI’s GPT-4 to deliver valuable health information.
+Welcome to the **MedAI Assistant** project! This repository leverages state-of-the-art technology to provide advanced healthcare insights using AI. Our application integrates a React frontend with a Django backend, incorporating Langchain AI agents and OpenAI’s GPT-4 to deliver valuable health information.
 
 ## Table of Contents
 
